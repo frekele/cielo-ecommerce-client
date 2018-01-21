@@ -1,9 +1,12 @@
 package org.frekele.cielo.ecommerce.client.auth;
 
+import org.frekele.cielo.ecommerce.client.testng.InvokedMethodListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
+@Listeners(InvokedMethodListener.class)
 public class CieloAuthTest {
 
     @Test
