@@ -34,9 +34,11 @@ Project built with RESTEasy 3.1.x for use in Web Applications.
 compile 'org.frekele.cielo:cielo-ecommerce-client:1.0.0'
 ```
 
-#### Usage
-TODO
+# Under construction, it is not ready for use yet. :(
 
+#### Usage
+
+TODO
 
 
 
