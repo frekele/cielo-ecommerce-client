@@ -10,6 +10,30 @@
 ### Remote integration with Cielo E-Commerce API 3.0
 
 
+Built-based on the documentation: [https://developercielo.github.io/manual/cielo-ecommerce](https://developercielo.github.io/manual/cielo-ecommerce)
+
+Project built with RESTEasy 3.1.x for use in Desktop and Web Applications.
+
+
+#### Supported Java Versions:
+- requires Java 8 (or higher) at runtime.
+
+
+#### Maven dependency:
+```xml
+<dependency>
+    <groupId>org.frekele.cielo</groupId>
+    <artifactId>cielo-ecommerce-client</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+#### Gradle dependency:
+```gradle
+compile 'org.frekele.cielo:cielo-ecommerce-client:1.0.0'
+```
+
+#### Usage
 TODO
 
 
