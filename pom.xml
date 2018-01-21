@@ -37,7 +37,7 @@
     <packaging>jar</packaging>
     <inceptionYear>2018</inceptionYear>
     <url>http://frekele.org</url>
-    <description>Cielo E-Commerce Java Client.</description>
+    <description>Cielo E-Commerce Java REST Client.</description>
 
 
     <licenses>
