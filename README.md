@@ -12,7 +12,7 @@
 
 Built-based on the documentation: [https://developercielo.github.io/manual/cielo-ecommerce](https://developercielo.github.io/manual/cielo-ecommerce)
 
-Project built with RESTEasy 3.1.x for use in Desktop and Web Applications.
+Project built with RESTEasy 3.1.x for use in Web Applications.
 
 
 #### Supported Java Versions:
