@@ -1,4 +1,4 @@
-# Cielo E-Commerce Java Client (Open Source)
+# Cielo E-Commerce Java REST Client (Open Source)
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.frekele.cielo/cielo-ecommerce-client/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.frekele.cielo/cielo-ecommerce-client)
 [![Javadocs](http://www.javadoc.io/badge/org.frekele.cielo/cielo-ecommerce-client.svg?color=blue)](http://www.javadoc.io/doc/org.frekele.cielo/cielo-ecommerce-client)
@@ -7,7 +7,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f16b9543d2f847179b27f9acda1911ee)](https://www.codacy.com/app/frekele/cielo-ecommerce-client?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frekele/cielo-ecommerce-client&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/f16b9543d2f847179b27f9acda1911ee)](https://www.codacy.com/app/frekele/cielo-ecommerce-client?utm_source=github.com&utm_medium=referral&utm_content=frekele/cielo-ecommerce-client&utm_campaign=Badge_Coverage)
 
-### Remote integration with Cielo E-Commerce API 3.0
+### REST Client Cielo E-Commerce API 3.0
 
 
 
