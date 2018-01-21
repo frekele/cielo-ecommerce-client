@@ -4,8 +4,8 @@
 [![Javadocs](http://www.javadoc.io/badge/org.frekele.cielo/cielo-ecommerce-client.svg?color=blue)](http://www.javadoc.io/doc/org.frekele.cielo/cielo-ecommerce-client)
 [![Build Status](https://travis-ci.org/frekele/cielo-ecommerce-client.svg?branch=master)](https://travis-ci.org/frekele/cielo-ecommerce-client)
 [![Coverage](https://codecov.io/gh/frekele/cielo-ecommerce-client/branch/master/graph/badge.svg)](https://codecov.io/gh/frekele/cielo-ecommerce-client)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8e49f3317817425abe7f67b02c590f1b)](https://www.codacy.com/app/frekele/cielo-ecommerce-client?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frekele/cielo-ecommerce-client&amp;utm_campaign=Badge_Grade)
-[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/8e49f3317817425abe7f67b02c590f1b)](https://www.codacy.com/app/frekele/cielo-ecommerce-client?utm_source=github.com&utm_medium=referral&utm_content=frekele/cielo-ecommerce-client&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f16b9543d2f847179b27f9acda1911ee)](https://www.codacy.com/app/frekele/cielo-ecommerce-client?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frekele/cielo-ecommerce-client&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/f16b9543d2f847179b27f9acda1911ee)](https://www.codacy.com/app/frekele/cielo-ecommerce-client?utm_source=github.com&utm_medium=referral&utm_content=frekele/cielo-ecommerce-client&utm_campaign=Badge_Coverage)
 
 ### Remote integration with Cielo E-Commerce API 3.0
 
