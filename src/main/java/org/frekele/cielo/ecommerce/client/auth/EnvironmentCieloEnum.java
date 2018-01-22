@@ -13,22 +13,22 @@ public enum EnvironmentCieloEnum {
 
     private String value;
 
-    private String targetRequestUrl;
+    private String targetApiRequestUrl;
 
-    private String targetQueryUrl;
+    private String targetApiQueryUrl;
 
-    EnvironmentCieloEnum(String value, String targetRequestUrl, String targetQueryUrl) {
+    EnvironmentCieloEnum(String value, String targetApiRequestUrl, String targetApiQueryUrl) {
         this.value = value;
-        this.targetRequestUrl = targetRequestUrl;
-        this.targetQueryUrl = targetQueryUrl;
+        this.targetApiRequestUrl = targetApiRequestUrl;
+        this.targetApiQueryUrl = targetApiQueryUrl;
     }
 
-    public String getTargetRequestUrl() {
-        return targetRequestUrl;
+    public String getTargetApiRequestUrl() {
+        return targetApiRequestUrl;
     }
 
-    public String getTargetQueryUrl() {
-        return targetQueryUrl;
+    public String getTargetApiQueryUrl() {
+        return targetApiQueryUrl;
     }
 
     public String getValue() {
