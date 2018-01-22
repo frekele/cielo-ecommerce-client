@@ -2,6 +2,9 @@ package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * @author frekele - Leandro Kersting de Freitas
+ */
 public class DebitCard {
 
     @JsonProperty("CardNumber")

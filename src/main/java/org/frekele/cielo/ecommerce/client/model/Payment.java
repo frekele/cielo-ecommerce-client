@@ -7,6 +7,9 @@ import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 
 import java.util.List;
 
+/**
+ * @author frekele - Leandro Kersting de Freitas
+ */
 public class Payment {
 
     @JsonProperty("ServiceTaxAmount")
