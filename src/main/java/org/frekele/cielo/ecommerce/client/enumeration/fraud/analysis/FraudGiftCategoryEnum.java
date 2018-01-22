@@ -1,4 +1,4 @@
-package org.frekele.cielo.ecommerce.client.enumeration;
+package org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,16 +14,15 @@ import java.util.List;
  */
 @XmlType
 @XmlEnum(String.class)
-public enum FraudAnalysisHostHedgeEnum {
+public enum FraudGiftCategoryEnum {
 
-    LOW("Low"),
-    NORMAL("Normal"),
-    HIGH("High"),
+    YES("Yes"),
+    NO("No"),
     OFF("Off");
 
     private String value;
 
-    private FraudAnalysisHostHedgeEnum(String value) {
+    private FraudGiftCategoryEnum(String value) {
         this.value = value;
     }
 
@@ -34,9 +33,9 @@ public enum FraudAnalysisHostHedgeEnum {
     }
 
     @JsonCreator
-    public static FraudAnalysisHostHedgeEnum fromValue(String value) {
+    public static FraudGiftCategoryEnum fromValue(String value) {
         if (value != null && value.length() != 0) {
-            for (FraudAnalysisHostHedgeEnum obj : getAll()) {
+            for (FraudGiftCategoryEnum obj : getAll()) {
                 if (obj.value.equals(value)) {
                     return obj;
                 }
@@ -45,7 +44,7 @@ public enum FraudAnalysisHostHedgeEnum {
         return null;
     }
 
-    public static List<FraudAnalysisHostHedgeEnum> getAll() {
-        return Arrays.asList(FraudAnalysisHostHedgeEnum.values());
+    public static List<FraudGiftCategoryEnum> getAll() {
+        return Arrays.asList(FraudGiftCategoryEnum.values());
     }
 }

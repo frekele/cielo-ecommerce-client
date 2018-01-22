@@ -1,4 +1,4 @@
-package org.frekele.cielo.ecommerce.client.enumeration;
+package org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -14,19 +14,16 @@ import java.util.List;
  */
 @XmlType
 @XmlEnum(String.class)
-public enum FraudAnalysisStatusEnum {
+public enum FraudHostHedgeEnum {
 
-    STARTED("Started"),
-    ACCEPT("Accept"),
-    REVIEW("Review"),
-    REJECT("Reject"),
-    UNFINISHED("Unfinished"),
-    PENDENT("Pendent"),
-    PROVIDER_ERROR("ProviderError");
+    LOW("Low"),
+    NORMAL("Normal"),
+    HIGH("High"),
+    OFF("Off");
 
     private String value;
 
-    private FraudAnalysisStatusEnum(String value) {
+    private FraudHostHedgeEnum(String value) {
         this.value = value;
     }
 
@@ -37,9 +34,9 @@ public enum FraudAnalysisStatusEnum {
     }
 
     @JsonCreator
-    public static FraudAnalysisStatusEnum fromValue(String value) {
+    public static FraudHostHedgeEnum fromValue(String value) {
         if (value != null && value.length() != 0) {
-            for (FraudAnalysisStatusEnum obj : getAll()) {
+            for (FraudHostHedgeEnum obj : getAll()) {
                 if (obj.value.equals(value)) {
                     return obj;
                 }
@@ -48,7 +45,7 @@ public enum FraudAnalysisStatusEnum {
         return null;
     }
 
-    public static List<FraudAnalysisStatusEnum> getAll() {
-        return Arrays.asList(FraudAnalysisStatusEnum.values());
+    public static List<FraudHostHedgeEnum> getAll() {
+        return Arrays.asList(FraudHostHedgeEnum.values());
     }
 }
