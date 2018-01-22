@@ -3,7 +3,7 @@ package org.frekele.cielo.ecommerce.client.model.fraud.analysis;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 
-public class Cart implements CieloEcommerceModel {
+public class FraudCart implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -13,16 +13,16 @@ public class Cart implements CieloEcommerceModel {
     @JsonProperty("ReturnsAccepted")
     private Boolean returnsAccepted;
 
-    public Cart() {
+    public FraudCart() {
         super();
     }
 
-    public Boolean getGift() {
+    public Boolean getIsGift() {
         return isGift;
     }
 
-    public void setGift(Boolean gift) {
-        isGift = gift;
+    public void setIsGift(Boolean isGift) {
+        this.isGift = isGift;
     }
 
     public Boolean getReturnsAccepted() {

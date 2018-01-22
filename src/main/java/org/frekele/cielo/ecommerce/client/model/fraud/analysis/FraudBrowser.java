@@ -3,7 +3,7 @@ package org.frekele.cielo.ecommerce.client.model.fraud.analysis;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 
-public class Browser implements CieloEcommerceModel {
+public class FraudBrowser implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,7 +22,7 @@ public class Browser implements CieloEcommerceModel {
     @JsonProperty("Type")
     private String type;
 
-    public Browser() {
+    public FraudBrowser() {
         super();
     }
 
