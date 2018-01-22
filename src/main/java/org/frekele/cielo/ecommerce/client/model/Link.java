@@ -1,11 +1,14 @@
 package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
-public class Link {
+public class Link implements CieloEcommerceModel {
+
+    private static final long serialVersionUID = 1L;
 
     @JsonProperty("Method")
     private String method;

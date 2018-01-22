@@ -1,12 +1,15 @@
 package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 import org.frekele.cielo.ecommerce.client.enumeration.WalletTypeEnum;
 
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
-public class Wallet {
+public class Wallet implements CieloEcommerceModel {
+
+    private static final long serialVersionUID = 1L;
 
     @JsonProperty("Type")
     private WalletTypeEnum type;

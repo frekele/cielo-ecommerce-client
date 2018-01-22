@@ -1,6 +1,7 @@
 package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
@@ -10,7 +11,9 @@ import java.util.List;
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
-public class RecurrentPayment {
+public class RecurrentPayment implements CieloEcommerceModel {
+
+    private static final long serialVersionUID = 1L;
 
     @JsonProperty("RecurrentPaymentId")
     private String recurrentPaymentId;

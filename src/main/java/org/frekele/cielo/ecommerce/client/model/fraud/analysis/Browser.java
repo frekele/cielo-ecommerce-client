@@ -1,8 +1,11 @@
 package org.frekele.cielo.ecommerce.client.model.fraud.analysis;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 
-public class Browser {
+public class Browser implements CieloEcommerceModel {
+
+    private static final long serialVersionUID = 1L;
 
     @JsonProperty("CookiesAccepted")
     private Boolean cookiesAccepted;

@@ -1,6 +1,7 @@
 package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
@@ -11,7 +12,9 @@ import java.util.List;
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
-public class Payment {
+public class Payment implements CieloEcommerceModel {
+
+    private static final long serialVersionUID = 1L;
 
     @JsonProperty("ServiceTaxAmount")
     private Integer serviceTaxAmount;
