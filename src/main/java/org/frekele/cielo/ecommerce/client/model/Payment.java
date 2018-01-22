@@ -6,6 +6,7 @@ import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 import org.frekele.cielo.ecommerce.client.model.fraud.analysis.FraudAnalysis;
+import org.frekele.cielo.ecommerce.client.model.recurrent.RecurrentPayment;
 
 import java.util.List;
 

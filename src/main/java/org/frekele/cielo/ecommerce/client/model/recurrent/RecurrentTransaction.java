@@ -1,4 +1,4 @@
-package org.frekele.cielo.ecommerce.client.model;
+package org.frekele.cielo.ecommerce.client.model.recurrent;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
@@ -12,6 +12,9 @@ public class RecurrentTransaction implements CieloEcommerceModel {
 
     @JsonProperty("PaymentId")
     private String paymentId;
+
+    @JsonProperty("TransactionId")
+    private String transactionId;
 
     @JsonProperty("PaymentNumber")
     private Integer paymentNumber;
@@ -28,6 +31,14 @@ public class RecurrentTransaction implements CieloEcommerceModel {
 
     public void setPaymentId(String paymentId) {
         this.paymentId = paymentId;
+    }
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 
     public Integer getPaymentNumber() {

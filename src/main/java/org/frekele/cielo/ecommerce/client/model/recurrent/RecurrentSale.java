@@ -1,7 +1,8 @@
-package org.frekele.cielo.ecommerce.client.model;
+package org.frekele.cielo.ecommerce.client.model.recurrent;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
+import org.frekele.cielo.ecommerce.client.model.Customer;
 
 /**
  * @author frekele - Leandro Kersting de Freitas

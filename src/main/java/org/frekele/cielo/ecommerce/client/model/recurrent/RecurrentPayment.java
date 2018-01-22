@@ -1,10 +1,11 @@
-package org.frekele.cielo.ecommerce.client.model;
+package org.frekele.cielo.ecommerce.client.model.recurrent;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
+import org.frekele.cielo.ecommerce.client.model.Link;
 
 import java.util.List;
 
