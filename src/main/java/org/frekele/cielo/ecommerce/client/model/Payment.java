@@ -46,6 +46,9 @@ public class Payment implements CieloEcommerceModel {
     @JsonProperty("Recurrent")
     private Boolean recurrent;
 
+    @JsonProperty("IsSplitted")
+    private Boolean isSplitted;
+
     @JsonProperty("Tid")
     private String tid;
 
@@ -208,6 +211,14 @@ public class Payment implements CieloEcommerceModel {
 
     public void setRecurrent(Boolean recurrent) {
         this.recurrent = recurrent;
+    }
+
+    public Boolean getIsSplitted() {
+        return isSplitted;
+    }
+
+    public void setIsSplitted(Boolean isSplitted) {
+        this.isSplitted = isSplitted;
     }
 
     public String getTid() {
