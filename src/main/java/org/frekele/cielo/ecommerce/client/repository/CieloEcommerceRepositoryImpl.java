@@ -2,6 +2,7 @@ package org.frekele.cielo.ecommerce.client.repository;
 
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.core.Cielo;
+import org.frekele.cielo.ecommerce.client.model.Sale;
 import org.frekele.cielo.ecommerce.client.util.CieloUtils;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
@@ -49,11 +50,18 @@ public class CieloEcommerceRepositoryImpl implements CieloEcommerceRepository {
     }
 
     @Override
+    public Sale createSale(Sale sale) {
+        CieloUtils.throwObject(sale, "Sale");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.createSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            sale);
+    }
+
+    @Override
     public String saleGetByMerchantOrderId(String merchantOrderId) {
         CieloUtils.throwObject(merchantOrderId, "merchantOrderId");
         CieloEcommerceApiQueryProxyClient proxyClient = this.getApiQueryProxyClient();
-        String requestId = CieloUtils.buildRequestId();
-        return proxyClient.saleGetByMerchantOrderId(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), requestId,
+        return proxyClient.saleGetByMerchantOrderId(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
             merchantOrderId);
     }
 }

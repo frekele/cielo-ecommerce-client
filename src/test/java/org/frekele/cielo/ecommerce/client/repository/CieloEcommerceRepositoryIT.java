@@ -3,6 +3,11 @@ package org.frekele.cielo.ecommerce.client.repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.auth.EnvironmentCieloEnum;
+import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
+import org.frekele.cielo.ecommerce.client.model.CreditCard;
+import org.frekele.cielo.ecommerce.client.model.Customer;
+import org.frekele.cielo.ecommerce.client.model.Payment;
+import org.frekele.cielo.ecommerce.client.model.Sale;
 import org.frekele.cielo.ecommerce.client.resteasy.LoggingFilter;
 import org.frekele.cielo.ecommerce.client.testng.InvokedMethodListener;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
@@ -12,6 +17,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import java.math.BigDecimal;
 
 /**
  * @author frekele - Leandro Kersting de Freitas
@@ -48,9 +55,39 @@ public class CieloEcommerceRepositoryIT {
     }
 
     @Test
+    public void testCreateSale() throws Exception {
+        Sale sale = new Sale();
+        sale.setMerchantOrderId("2014111704");
+        Customer customer = new Customer();
+        customer.setName("Comprador crédito simples");
+        sale.setCustomer(customer);
+
+        Payment payment = new Payment();
+        payment.setType(PaymentTypeEnum.CREDIT_CARD);
+        payment.setAmount(BigDecimal.valueOf(157.00));
+        payment.setInstallments(1);
+        payment.setSoftDescriptor("123456789ABCD");
+        CreditCard creditCard = new CreditCard();
+        creditCard.setCardNumber("1234123412341231");
+        creditCard.setHolder("Teste Holder");
+        creditCard.setExpirationDate("12/2030");
+        creditCard.setSecurityCode("123");
+        creditCard.setBrand("Visa");
+        payment.setCreditCard(creditCard);
+        sale.setPayment(payment);
+
+        System.out.println("new Sale");
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(sale));
+
+        Sale saleResult = repository.createSale(sale);
+        System.out.println("saleResult");
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(saleResult));
+    }
+
+    @Test
     public void testSaleGetByMerchantOrderId() throws Exception {
-        String result = repository.saleGetByMerchantOrderId("2014111703");
-        System.out.println(result);
+        // String result = repository.saleGetByMerchantOrderId("2014111703");
+        // System.out.println(result);
     }
 
     private void sleep(long seconds) {

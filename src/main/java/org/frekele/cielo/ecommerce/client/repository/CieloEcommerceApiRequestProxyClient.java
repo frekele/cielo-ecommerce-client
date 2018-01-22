@@ -1,11 +1,12 @@
 package org.frekele.cielo.ecommerce.client.repository;
 
+import org.frekele.cielo.ecommerce.client.model.Sale;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.io.Serializable;
 
@@ -19,8 +20,8 @@ interface CieloEcommerceApiRequestProxyClient extends Serializable {
 
     @POST
     @Path("sales")
-    String xxxxxxx(@HeaderParam("MerchantId") String merchantId,
-                   @HeaderParam("MerchantKey") String merchantKey,
-                   @HeaderParam("RequestId") String requestId,
-                   @QueryParam("xxxx") String xxx);
+    Sale createSale(@HeaderParam("MerchantId") String merchantId,
+                    @HeaderParam("MerchantKey") String merchantKey,
+                    @HeaderParam("RequestId") String requestId,
+                    Sale sale);
 }
