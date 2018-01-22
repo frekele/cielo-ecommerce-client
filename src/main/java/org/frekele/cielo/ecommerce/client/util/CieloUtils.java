@@ -3,6 +3,8 @@ package org.frekele.cielo.ecommerce.client.util;
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.exception.CieloException;
 
+import java.util.UUID;
+
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
@@ -42,5 +44,9 @@ public final class CieloUtils {
         if (obj == null || obj.toString().trim().isEmpty()) {
             throw new CieloException("" + objectName + " can not be Null or Empty!");
         }
+    }
+
+    public static String buildRequestId() {
+        return UUID.randomUUID().toString();
     }
 }

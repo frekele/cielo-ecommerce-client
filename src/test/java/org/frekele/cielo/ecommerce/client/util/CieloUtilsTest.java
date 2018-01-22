@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 
 import java.math.BigDecimal;
 
+import static org.testng.Assert.*;
+
 @Listeners(InvokedMethodListener.class)
 public class CieloUtilsTest {
 
@@ -103,5 +105,11 @@ public class CieloUtilsTest {
     @Test(expectedExceptions = {CieloException.class})
     public void testThrowObjectWithError2() throws Exception {
         CieloUtils.throwObject("", "value");
+    }
+
+    @Test
+    public void testBuildRequestId() throws Exception {
+        String result = CieloUtils.buildRequestId();
+        assertNotNull(result);
     }
 }
