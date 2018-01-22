@@ -1,0 +1,90 @@
+package org.frekele.cielo.ecommerce.client.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Customer {
+
+    @JsonProperty("Name")
+    private String name;
+
+    @JsonProperty("Status")
+    private String status;
+
+    @JsonProperty("Email")
+    private String email;
+
+    @JsonProperty("BirthDate")
+    private String birthDate;
+
+    @JsonProperty("Identity")
+    private String identity;
+
+    @JsonProperty("IdentityType")
+    private String identityType;
+
+    @JsonProperty("Address")
+    private Address address;
+
+    @JsonProperty("DeliveryAddress")
+    private Address deliveryAddress;
+
+    public Customer() {
+        super();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(String identity) {
+        this.identity = identity;
+    }
+
+    public String getIdentityType() {
+        return identityType;
+    }
+
+    public void setIdentityType(String identityType) {
+        this.identityType = identityType;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Address getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public void setDeliveryAddress(Address deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+}
