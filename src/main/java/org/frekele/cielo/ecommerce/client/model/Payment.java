@@ -1,6 +1,10 @@
 package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.frekele.cielo.ecommerce.client.converter.deserialize.BigDecimalJsonDeserialize;
+import org.frekele.cielo.ecommerce.client.converter.serialize.BigDecimalJsonSerialize;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
@@ -8,6 +12,7 @@ import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 import org.frekele.cielo.ecommerce.client.model.fraud.analysis.FraudAnalysis;
 import org.frekele.cielo.ecommerce.client.model.recurrent.RecurrentPayment;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -17,8 +22,10 @@ public class Payment implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonDeserialize(using = BigDecimalJsonDeserialize.class)
+    @JsonSerialize(using = BigDecimalJsonSerialize.class)
     @JsonProperty("ServiceTaxAmount")
-    private Integer serviceTaxAmount;
+    private BigDecimal serviceTaxAmount;
 
     @JsonProperty("Installments")
     private Integer installments;
@@ -71,14 +78,18 @@ public class Payment implements CieloEcommerceModel {
     @JsonProperty("Type")
     private PaymentTypeEnum type;
 
+    @JsonDeserialize(using = BigDecimalJsonDeserialize.class)
+    @JsonSerialize(using = BigDecimalJsonSerialize.class)
     @JsonProperty("Amount")
-    private Integer amount;
+    private BigDecimal amount;
 
     @JsonProperty("ReceivedDate")
     private String receivedDate;
 
+    @JsonDeserialize(using = BigDecimalJsonDeserialize.class)
+    @JsonSerialize(using = BigDecimalJsonSerialize.class)
     @JsonProperty("CapturedAmount")
-    private Integer capturedAmount;
+    private BigDecimal capturedAmount;
 
     @JsonProperty("CapturedDate")
     private String capturedDate;
@@ -144,11 +155,11 @@ public class Payment implements CieloEcommerceModel {
         super();
     }
 
-    public Integer getServiceTaxAmount() {
+    public BigDecimal getServiceTaxAmount() {
         return serviceTaxAmount;
     }
 
-    public void setServiceTaxAmount(Integer serviceTaxAmount) {
+    public void setServiceTaxAmount(BigDecimal serviceTaxAmount) {
         this.serviceTaxAmount = serviceTaxAmount;
     }
 
@@ -288,11 +299,11 @@ public class Payment implements CieloEcommerceModel {
         this.type = type;
     }
 
-    public Integer getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
@@ -304,11 +315,11 @@ public class Payment implements CieloEcommerceModel {
         this.receivedDate = receivedDate;
     }
 
-    public Integer getCapturedAmount() {
+    public BigDecimal getCapturedAmount() {
         return capturedAmount;
     }
 
-    public void setCapturedAmount(Integer capturedAmount) {
+    public void setCapturedAmount(BigDecimal capturedAmount) {
         this.capturedAmount = capturedAmount;
     }
 
