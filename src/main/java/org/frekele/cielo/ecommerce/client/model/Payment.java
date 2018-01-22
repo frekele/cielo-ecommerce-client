@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
+import org.frekele.cielo.ecommerce.client.model.fraud.analysis.FraudAnalysis;
 
 import java.util.List;
 
@@ -38,6 +39,9 @@ public class Payment {
 
     @JsonProperty("DebitCard")
     private DebitCard debitCard;
+
+    @JsonProperty("FraudAnalysis")
+    private FraudAnalysis fraudAnalysis;
 
     @JsonProperty("Tid")
     private String tid;
@@ -206,6 +210,14 @@ public class Payment {
 
     public void setDebitCard(DebitCard debitCard) {
         this.debitCard = debitCard;
+    }
+
+    public FraudAnalysis getFraudAnalysis() {
+        return fraudAnalysis;
+    }
+
+    public void setFraudAnalysis(FraudAnalysis fraudAnalysis) {
+        this.fraudAnalysis = fraudAnalysis;
     }
 
     public String getTid() {
