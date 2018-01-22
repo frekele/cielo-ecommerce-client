@@ -4,6 +4,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 import org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis.FraudShippingMethodEnum;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * @author frekele - Leandro Kersting de Freitas
+ */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class FraudShipping implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;

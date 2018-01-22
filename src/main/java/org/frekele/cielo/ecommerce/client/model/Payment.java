@@ -12,12 +12,17 @@ import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 import org.frekele.cielo.ecommerce.client.model.fraud.analysis.FraudAnalysis;
 import org.frekele.cielo.ecommerce.client.model.recurrent.RecurrentPayment;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Payment implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;
@@ -41,18 +46,6 @@ public class Payment implements CieloEcommerceModel {
 
     @JsonProperty("Recurrent")
     private Boolean recurrent;
-
-    @JsonProperty("RecurrentPayment")
-    private RecurrentPayment recurrentPayment;
-
-    @JsonProperty("CreditCard")
-    private CreditCard creditCard;
-
-    @JsonProperty("DebitCard")
-    private DebitCard debitCard;
-
-    @JsonProperty("FraudAnalysis")
-    private FraudAnalysis fraudAnalysis;
 
     @JsonProperty("Tid")
     private String tid;
@@ -109,12 +102,6 @@ public class Payment implements CieloEcommerceModel {
     @JsonProperty("Status")
     private Integer status;
 
-    @JsonProperty("Links")
-    private List<Link> links;
-
-    @JsonProperty("ExtraDataCollection")
-    private List<String> extraDataCollection;
-
     @JsonProperty("ExpirationDate")
     private String expirationDate;
 
@@ -150,6 +137,27 @@ public class Payment implements CieloEcommerceModel {
 
     @JsonProperty("AuthenticationUrl")
     private String authenticationUrl;
+
+    @JsonProperty("RecurrentPayment")
+    private RecurrentPayment recurrentPayment;
+
+    @JsonProperty("CreditCard")
+    private CreditCard creditCard;
+
+    @JsonProperty("DebitCard")
+    private DebitCard debitCard;
+
+    @JsonProperty("Wallet")
+    private Wallet wallet;
+
+    @JsonProperty("FraudAnalysis")
+    private FraudAnalysis fraudAnalysis;
+
+    @JsonProperty("Links")
+    private List<Link> links;
+
+    @JsonProperty("ExtraDataCollection")
+    private List<String> extraDataCollection;
 
     public Payment() {
         super();
@@ -201,38 +209,6 @@ public class Payment implements CieloEcommerceModel {
 
     public void setRecurrent(Boolean recurrent) {
         this.recurrent = recurrent;
-    }
-
-    public RecurrentPayment getRecurrentPayment() {
-        return recurrentPayment;
-    }
-
-    public void setRecurrentPayment(RecurrentPayment recurrentPayment) {
-        this.recurrentPayment = recurrentPayment;
-    }
-
-    public CreditCard getCreditCard() {
-        return creditCard;
-    }
-
-    public void setCreditCard(CreditCard creditCard) {
-        this.creditCard = creditCard;
-    }
-
-    public DebitCard getDebitCard() {
-        return debitCard;
-    }
-
-    public void setDebitCard(DebitCard debitCard) {
-        this.debitCard = debitCard;
-    }
-
-    public FraudAnalysis getFraudAnalysis() {
-        return fraudAnalysis;
-    }
-
-    public void setFraudAnalysis(FraudAnalysis fraudAnalysis) {
-        this.fraudAnalysis = fraudAnalysis;
     }
 
     public String getTid() {
@@ -371,22 +347,6 @@ public class Payment implements CieloEcommerceModel {
         this.status = status;
     }
 
-    public List<Link> getLinks() {
-        return links;
-    }
-
-    public void setLinks(List<Link> links) {
-        this.links = links;
-    }
-
-    public List<String> getExtraDataCollection() {
-        return extraDataCollection;
-    }
-
-    public void setExtraDataCollection(List<String> extraDataCollection) {
-        this.extraDataCollection = extraDataCollection;
-    }
-
     public String getExpirationDate() {
         return expirationDate;
     }
@@ -481,5 +441,61 @@ public class Payment implements CieloEcommerceModel {
 
     public void setAuthenticationUrl(String authenticationUrl) {
         this.authenticationUrl = authenticationUrl;
+    }
+
+    public RecurrentPayment getRecurrentPayment() {
+        return recurrentPayment;
+    }
+
+    public void setRecurrentPayment(RecurrentPayment recurrentPayment) {
+        this.recurrentPayment = recurrentPayment;
+    }
+
+    public CreditCard getCreditCard() {
+        return creditCard;
+    }
+
+    public void setCreditCard(CreditCard creditCard) {
+        this.creditCard = creditCard;
+    }
+
+    public DebitCard getDebitCard() {
+        return debitCard;
+    }
+
+    public void setDebitCard(DebitCard debitCard) {
+        this.debitCard = debitCard;
+    }
+
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(Wallet wallet) {
+        this.wallet = wallet;
+    }
+
+    public FraudAnalysis getFraudAnalysis() {
+        return fraudAnalysis;
+    }
+
+    public void setFraudAnalysis(FraudAnalysis fraudAnalysis) {
+        this.fraudAnalysis = fraudAnalysis;
+    }
+
+    public List<Link> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<Link> links) {
+        this.links = links;
+    }
+
+    public List<String> getExtraDataCollection() {
+        return extraDataCollection;
+    }
+
+    public void setExtraDataCollection(List<String> extraDataCollection) {
+        this.extraDataCollection = extraDataCollection;
     }
 }

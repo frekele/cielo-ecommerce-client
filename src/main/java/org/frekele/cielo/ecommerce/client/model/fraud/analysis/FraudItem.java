@@ -14,12 +14,17 @@ import org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis.FraudRiskEn
 import org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis.FraudTimeHedgeEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis.FraudVelocityHedgeEnum;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class FraudItem implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;

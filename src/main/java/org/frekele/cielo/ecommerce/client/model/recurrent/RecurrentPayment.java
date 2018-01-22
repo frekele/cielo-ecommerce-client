@@ -7,11 +7,16 @@ import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
 import org.frekele.cielo.ecommerce.client.model.Link;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class RecurrentPayment implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;
@@ -56,7 +61,7 @@ public class RecurrentPayment implements CieloEcommerceModel {
     private Integer successfulRecurrences;
 
     @JsonProperty("AuthorizeNow")
-    private boolean authorizeNow;
+    private Boolean authorizeNow;
 
     @JsonProperty("ReasonCode")
     private Integer reasonCode;
@@ -181,11 +186,11 @@ public class RecurrentPayment implements CieloEcommerceModel {
         this.successfulRecurrences = successfulRecurrences;
     }
 
-    public boolean isAuthorizeNow() {
+    public Boolean getAuthorizeNow() {
         return authorizeNow;
     }
 
-    public void setAuthorizeNow(boolean authorizeNow) {
+    public void setAuthorizeNow(Boolean authorizeNow) {
         this.authorizeNow = authorizeNow;
     }
 
