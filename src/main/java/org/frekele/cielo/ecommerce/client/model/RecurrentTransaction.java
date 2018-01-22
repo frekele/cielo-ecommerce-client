@@ -1,4 +1,4 @@
-package org.frekele.cielo.ecommerce.client.model.recurrent;
+package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
