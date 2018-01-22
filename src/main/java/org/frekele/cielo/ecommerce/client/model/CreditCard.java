@@ -23,7 +23,7 @@ public class CreditCard implements CieloEcommerceModel {
     private String securityCode;
 
     @JsonProperty("SaveCard")
-    private boolean saveCard;
+    private Boolean saveCard;
 
     @JsonProperty("Brand")
     private String brand;
@@ -67,11 +67,11 @@ public class CreditCard implements CieloEcommerceModel {
         this.securityCode = securityCode;
     }
 
-    public boolean isSaveCard() {
+    public Boolean getSaveCard() {
         return saveCard;
     }
 
-    public void setSaveCard(boolean saveCard) {
+    public void setSaveCard(Boolean saveCard) {
         this.saveCard = saveCard;
     }
 
