@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.frekele.cielo.ecommerce.client.converter.deserialize.BigDecimalJsonDeserialize;
 import org.frekele.cielo.ecommerce.client.converter.serialize.BigDecimalJsonSerialize;
-import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
 import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
@@ -22,7 +21,7 @@ import java.util.List;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Payment implements CieloEcommerceModel {
+public class Payment extends BasePayment {
 
     private static final long serialVersionUID = 1L;
 
