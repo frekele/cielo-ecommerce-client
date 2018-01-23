@@ -4,6 +4,7 @@ import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
 import org.frekele.cielo.ecommerce.client.model.Customer;
 import org.frekele.cielo.ecommerce.client.model.Payment;
 import org.frekele.cielo.ecommerce.client.model.Sale;
+import org.frekele.cielo.ecommerce.client.model.response.PaymentsQueryResponse;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -33,5 +34,7 @@ public interface CieloEcommerceRepository extends Serializable {
 
     public void reactivateRecurrentSale(String recurrentPaymentId);
 
-    public String saleGetByMerchantOrderId(String merchantOrderId);
+    public Sale findSale(String paymentId);
+
+    public PaymentsQueryResponse findPayments(String merchantOrderId);
 }

@@ -6,6 +6,7 @@ import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
 import org.frekele.cielo.ecommerce.client.model.Customer;
 import org.frekele.cielo.ecommerce.client.model.Payment;
 import org.frekele.cielo.ecommerce.client.model.Sale;
+import org.frekele.cielo.ecommerce.client.model.response.PaymentsQueryResponse;
 import org.frekele.cielo.ecommerce.client.util.CieloUtils;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
@@ -141,10 +142,18 @@ public class CieloEcommerceRepositoryImpl implements CieloEcommerceRepository {
     }
 
     @Override
-    public String saleGetByMerchantOrderId(String merchantOrderId) {
+    public Sale findSale(String paymentId) {
+        CieloUtils.throwObject(paymentId, "paymentId");
+        CieloEcommerceApiQueryProxyClient proxyClient = this.getApiQueryProxyClient();
+        return proxyClient.findSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            paymentId);
+    }
+
+    @Override
+    public PaymentsQueryResponse findPayments(String merchantOrderId) {
         CieloUtils.throwObject(merchantOrderId, "merchantOrderId");
         CieloEcommerceApiQueryProxyClient proxyClient = this.getApiQueryProxyClient();
-        return proxyClient.saleGetByMerchantOrderId(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+        return proxyClient.findPayments(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
             merchantOrderId);
     }
 }

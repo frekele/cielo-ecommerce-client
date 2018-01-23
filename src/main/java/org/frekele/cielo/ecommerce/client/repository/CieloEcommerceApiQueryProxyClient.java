@@ -1,9 +1,13 @@
 package org.frekele.cielo.ecommerce.client.repository;
 
+import org.frekele.cielo.ecommerce.client.model.Sale;
+import org.frekele.cielo.ecommerce.client.model.response.PaymentsQueryResponse;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -18,9 +22,23 @@ import java.io.Serializable;
 interface CieloEcommerceApiQueryProxyClient extends Serializable {
 
     @GET
+    @Path("sales/{paymentId}")
+    Sale findSale(@HeaderParam("MerchantId") String merchantId,
+                  @HeaderParam("MerchantKey") String merchantKey,
+                  @HeaderParam("RequestId") String requestId,
+                  @PathParam("paymentId") String paymentId);
+
+    @GET
     @Path("sales")
-    String saleGetByMerchantOrderId(@HeaderParam("MerchantId") String merchantId,
-                                    @HeaderParam("MerchantKey") String merchantKey,
-                                    @HeaderParam("RequestId") String requestId,
-                                    @QueryParam("merchantOrderId") String merchantOrderId);
+    PaymentsQueryResponse findPayments(@HeaderParam("MerchantId") String merchantId,
+                                       @HeaderParam("MerchantKey") String merchantKey,
+                                       @HeaderParam("RequestId") String requestId,
+                                       @QueryParam("merchantOrderId") String merchantOrderId);
+
+    @GET
+    @Path("RecurrentPayment/{recurrentPaymentId}")
+    void findRecurrentSale(@HeaderParam("MerchantId") String merchantId,
+                           @HeaderParam("MerchantKey") String merchantKey,
+                           @HeaderParam("RequestId") String requestId,
+                           @PathParam("recurrentPaymentId") String recurrentPaymentId);
 }
