@@ -3,6 +3,7 @@ package org.frekele.cielo.ecommerce.client.repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.auth.EnvironmentCieloEnum;
+import org.frekele.cielo.ecommerce.client.enumeration.CardBrandEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
 import org.frekele.cielo.ecommerce.client.model.CreditCard;
 import org.frekele.cielo.ecommerce.client.model.Customer;
@@ -72,7 +73,7 @@ public class CieloEcommerceRepositoryIT {
         creditCard.setHolder("Teste Holder");
         creditCard.setExpirationDate("12/2030");
         creditCard.setSecurityCode("123");
-        creditCard.setBrand("Visa");
+        creditCard.setBrand(CardBrandEnum.VISA);
         payment.setCreditCard(creditCard);
         sale.setPayment(payment);
 
