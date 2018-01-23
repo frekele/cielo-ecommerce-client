@@ -16,22 +16,29 @@ import java.util.List;
 @XmlEnum(String.class)
 public enum RecurrentIntervalEnum {
 
-    MONTHLY("Monthly"),
-    BIMONTHLY("Bimonthly"),
-    QUARTERLY("Quarterly"),
-    SEMI_ANNUAL("SemiAnnual"),
-    ANNUAL("Annual");
+    MONTHLY("Monthly", 1),
+    BIMONTHLY("Bimonthly", 2),
+    QUARTERLY("Quarterly", 3),
+    SEMI_ANNUAL("SemiAnnual", 6),
+    ANNUAL("Annual", 12);
 
     private String value;
 
-    private RecurrentIntervalEnum(String value) {
+    private Integer interval;
+
+    private RecurrentIntervalEnum(String value, Integer interval) {
         this.value = value;
+        this.interval = interval;
     }
 
     @JsonValue
     @XmlValue
     public String getValue() {
         return this.value;
+    }
+
+    public Integer getInterval() {
+        return interval;
     }
 
     @JsonCreator

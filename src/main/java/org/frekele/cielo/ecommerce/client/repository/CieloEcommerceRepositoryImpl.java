@@ -2,12 +2,16 @@ package org.frekele.cielo.ecommerce.client.repository;
 
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.core.Cielo;
+import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
+import org.frekele.cielo.ecommerce.client.model.Customer;
+import org.frekele.cielo.ecommerce.client.model.Payment;
 import org.frekele.cielo.ecommerce.client.model.Sale;
 import org.frekele.cielo.ecommerce.client.util.CieloUtils;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
 import javax.inject.Inject;
+import java.math.BigDecimal;
 
 /**
  * @author frekele - Leandro Kersting de Freitas
@@ -55,6 +59,85 @@ public class CieloEcommerceRepositoryImpl implements CieloEcommerceRepository {
         CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
         return proxyClient.createSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
             sale);
+    }
+
+    @Override
+    public void updateRecurrentSaleCustomer(String recurrentPaymentId, Customer customer) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloUtils.throwObject(customer, "Customer");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.updateRecurrentSaleCustomer(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId, customer);
+    }
+
+    @Override
+    public void updateRecurrentSaleEndDate(String recurrentPaymentId, String endDate) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloUtils.throwObject(endDate, "endDate");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.updateRecurrentSaleEndDate(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId, endDate);
+    }
+
+    @Override
+    public void updateRecurrentSaleInterval(String recurrentPaymentId, RecurrentIntervalEnum interval) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloUtils.throwObject(interval, "RecurrentIntervalEnum");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.updateRecurrentSaleInterval(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId, interval.getInterval());
+    }
+
+    @Override
+    public void updateRecurrentSaleDay(String recurrentPaymentId, Integer recurrencyDay) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloUtils.throwObject(recurrencyDay, "recurrencyDay");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.updateRecurrentSaleDay(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId, recurrencyDay);
+    }
+
+    @Override
+    public void updateRecurrentSaleAmount(String recurrentPaymentId, BigDecimal amount) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloUtils.throwObject(amount, "amount");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.updateRecurrentSaleAmount(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId, amount.unscaledValue().longValue());
+    }
+
+    @Override
+    public void updateRecurrentSaleNextPaymentDate(String recurrentPaymentId, String nextPaymentDate) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloUtils.throwObject(nextPaymentDate, "nextPaymentDate");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.updateRecurrentSaleNextPaymentDate(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId, nextPaymentDate);
+    }
+
+    @Override
+    public void updateRecurrentSalePayment(String recurrentPaymentId, Payment payment) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloUtils.throwObject(payment, "Payment");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.updateRecurrentSalePayment(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId, payment);
+    }
+
+    @Override
+    public void deactivateRecurrentSale(String recurrentPaymentId) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.deactivateRecurrentSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId);
+    }
+
+    @Override
+    public void reactivateRecurrentSale(String recurrentPaymentId) {
+        CieloUtils.throwObject(recurrentPaymentId, "recurrentPaymentId");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        proxyClient.reactivateRecurrentSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            recurrentPaymentId);
     }
 
     @Override
