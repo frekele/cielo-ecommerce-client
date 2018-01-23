@@ -49,6 +49,21 @@ public class Payment implements CieloEcommerceModel {
     @JsonProperty("IsSplitted")
     private Boolean isSplitted;
 
+    @JsonProperty("RecurrentPayment")
+    private RecurrentPayment recurrentPayment;
+
+    @JsonProperty("CreditCard")
+    private CreditCard creditCard;
+
+    @JsonProperty("DebitCard")
+    private DebitCard debitCard;
+
+    @JsonProperty("Wallet")
+    private Wallet wallet;
+
+    @JsonProperty("FraudAnalysis")
+    private FraudAnalysis fraudAnalysis;
+
     @JsonProperty("Tid")
     private String tid;
 
@@ -104,6 +119,12 @@ public class Payment implements CieloEcommerceModel {
     @JsonProperty("Status")
     private Integer status;
 
+    @JsonProperty("Links")
+    private List<Link> links;
+
+    @JsonProperty("ExtraDataCollection")
+    private List<String> extraDataCollection;
+
     @JsonProperty("ExpirationDate")
     private String expirationDate;
 
@@ -139,27 +160,6 @@ public class Payment implements CieloEcommerceModel {
 
     @JsonProperty("AuthenticationUrl")
     private String authenticationUrl;
-
-    @JsonProperty("RecurrentPayment")
-    private RecurrentPayment recurrentPayment;
-
-    @JsonProperty("CreditCard")
-    private CreditCard creditCard;
-
-    @JsonProperty("DebitCard")
-    private DebitCard debitCard;
-
-    @JsonProperty("Wallet")
-    private Wallet wallet;
-
-    @JsonProperty("FraudAnalysis")
-    private FraudAnalysis fraudAnalysis;
-
-    @JsonProperty("Links")
-    private List<Link> links;
-
-    @JsonProperty("ExtraDataCollection")
-    private List<String> extraDataCollection;
 
     public Payment() {
         super();
