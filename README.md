@@ -10,6 +10,9 @@
 ### REST Client Cielo E-Commerce API 3.0
 
 
+# Under construction, is not ready for use yet. :(
+
+
 
 Built-based on the documentation: [https://developercielo.github.io/manual/cielo-ecommerce](https://developercielo.github.io/manual/cielo-ecommerce)
 
@@ -33,8 +36,6 @@ Project built with RESTEasy 3.1.x + Jackson 2.x.x for use in Web Applications.
 ```gradle
 compile 'org.frekele.cielo:cielo-ecommerce-client:0.1.0-SNAPSHOT'
 ```
-
-# Under construction, it is not ready for use yet. :(
 
 #### Usage
 
