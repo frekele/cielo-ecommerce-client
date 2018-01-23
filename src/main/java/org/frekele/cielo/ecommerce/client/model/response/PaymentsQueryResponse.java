@@ -1,4 +1,4 @@
-package org.frekele.cielo.ecommerce.client.model.request;
+package org.frekele.cielo.ecommerce.client.model.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
@@ -14,7 +14,7 @@ import java.util.List;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class PaymentQueryRequest implements CieloEcommerceModel {
+public class PaymentsQueryResponse implements CieloEcommerceModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,7 +27,7 @@ public class PaymentQueryRequest implements CieloEcommerceModel {
     @JsonProperty("Payments")
     private List<BasePayment> payments;
 
-    public PaymentQueryRequest() {
+    public PaymentsQueryResponse() {
     }
 
     public String getReasonCode() {
