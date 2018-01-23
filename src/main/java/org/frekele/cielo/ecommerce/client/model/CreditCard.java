@@ -2,6 +2,7 @@ package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
+import org.frekele.cielo.ecommerce.client.enumeration.CardBrandEnum;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,7 +33,7 @@ public class CreditCard implements CieloEcommerceModel {
     private Boolean saveCard;
 
     @JsonProperty("Brand")
-    private String brand;
+    private CardBrandEnum brand;
 
     @JsonProperty("CardToken")
     private String cardToken;
@@ -81,11 +82,11 @@ public class CreditCard implements CieloEcommerceModel {
         this.saveCard = saveCard;
     }
 
-    public String getBrand() {
+    public CardBrandEnum getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(CardBrandEnum brand) {
         this.brand = brand;
     }
 
