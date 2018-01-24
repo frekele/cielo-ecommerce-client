@@ -17,7 +17,7 @@ public class FraudCart implements CieloEcommerceModel {
     private static final long serialVersionUID = 1L;
 
     @JsonProperty("IsGift")
-    private Boolean isGift;
+    private Boolean gift;
 
     @JsonProperty("ReturnsAccepted")
     private Boolean returnsAccepted;
@@ -26,12 +26,12 @@ public class FraudCart implements CieloEcommerceModel {
         super();
     }
 
-    public Boolean getIsGift() {
-        return isGift;
+    public Boolean getGift() {
+        return gift;
     }
 
-    public void setIsGift(Boolean isGift) {
-        this.isGift = isGift;
+    public void setGift(Boolean gift) {
+        this.gift = gift;
     }
 
     public Boolean getReturnsAccepted() {
