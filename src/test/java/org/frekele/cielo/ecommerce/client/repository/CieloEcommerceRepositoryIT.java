@@ -86,9 +86,79 @@ public class CieloEcommerceRepositoryIT {
     }
 
     @Test
-    public void testSaleGetByMerchantOrderId() throws Exception {
-        // String result = repository.saleGetByMerchantOrderId("2014111703");
-        // System.out.println(result);
+    public void testCreateCardToken() throws Exception {
+    }
+
+    @Test
+    public void testUpdateRecurrentSaleCustomer() throws Exception {
+    }
+
+    @Test
+    public void testUpdateRecurrentSaleEndDate() throws Exception {
+    }
+
+    @Test
+    public void testUpdateRecurrentSaleInterval() throws Exception {
+    }
+
+    @Test
+    public void testUpdateRecurrentSaleDay() throws Exception {
+    }
+
+    @Test
+    public void testUpdateRecurrentSaleAmount() throws Exception {
+    }
+
+    @Test
+    public void testUpdateRecurrentSaleNextPaymentDate() throws Exception {
+    }
+
+    @Test
+    public void testUpdateRecurrentSalePayment() throws Exception {
+    }
+
+    @Test
+    public void testDeactivateRecurrentSale() throws Exception {
+    }
+
+    @Test
+    public void testReactivateRecurrentSale() throws Exception {
+    }
+
+    @Test
+    public void testCaptureSale() throws Exception {
+    }
+
+    @Test
+    public void testCaptureSale1() throws Exception {
+    }
+
+    @Test
+    public void testCaptureSale2() throws Exception {
+    }
+
+    @Test
+    public void testCancelSale() throws Exception {
+    }
+
+    @Test
+    public void testCancelSale1() throws Exception {
+    }
+
+    @Test
+    public void testCancelSaleByMerchantOrderId() throws Exception {
+    }
+
+    @Test
+    public void testCancelSaleByMerchantOrderId1() throws Exception {
+    }
+
+    @Test
+    public void testFindSale() throws Exception {
+    }
+
+    @Test
+    public void testFindPayments() throws Exception {
     }
 
     private void sleep(long seconds) {

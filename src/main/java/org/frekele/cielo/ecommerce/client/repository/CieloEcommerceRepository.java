@@ -16,10 +16,6 @@ import java.math.BigDecimal;
  */
 public interface CieloEcommerceRepository extends Serializable {
 
-    public Sale findSale(String paymentId);
-
-    public PaymentsQueryResponse findPayments(String merchantOrderId);
-
     public Sale createSale(Sale sale);
 
     public CardToken createCardToken(CardToken cardToken);
@@ -55,4 +51,8 @@ public interface CieloEcommerceRepository extends Serializable {
     public CaptureResponse cancelSaleByMerchantOrderId(String merchantOrderId);
 
     public CaptureResponse cancelSaleByMerchantOrderId(String merchantOrderId, BigDecimal amount);
+
+    public Sale findSale(String paymentId);
+
+    public PaymentsQueryResponse findPayments(String merchantOrderId);
 }
