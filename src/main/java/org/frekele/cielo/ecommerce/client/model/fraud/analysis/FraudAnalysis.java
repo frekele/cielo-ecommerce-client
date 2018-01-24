@@ -1,7 +1,7 @@
 package org.frekele.cielo.ecommerce.client.model.fraud.analysis;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceEntity;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -13,7 +13,7 @@ import java.util.List;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class FraudAnalysis implements CieloEcommerceModel {
+public class FraudAnalysis implements CieloEcommerceEntity {
 
     private static final long serialVersionUID = 1L;
 

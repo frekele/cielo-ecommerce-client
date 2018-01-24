@@ -1,7 +1,7 @@
 package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceEntity;
 import org.frekele.cielo.ecommerce.client.enumeration.CurrencyEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.ProviderEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class RecurrentPayment implements CieloEcommerceModel {
+public class RecurrentPayment implements CieloEcommerceEntity {
 
     private static final long serialVersionUID = 1L;
 

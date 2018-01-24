@@ -5,6 +5,6 @@ import java.io.Serializable;
 /**
  * @author frekele - Leandro Kersting de Freitas
  */
-public interface CieloEcommerceModel extends Serializable {
+public interface CieloEcommerceEntity extends Serializable {
 
 }

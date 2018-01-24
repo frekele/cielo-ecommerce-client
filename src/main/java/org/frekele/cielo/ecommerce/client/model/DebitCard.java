@@ -1,7 +1,7 @@
 package org.frekele.cielo.ecommerce.client.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceEntity;
 import org.frekele.cielo.ecommerce.client.enumeration.CardBrandEnum;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class DebitCard implements CieloEcommerceModel {
+public class DebitCard implements CieloEcommerceEntity {
 
     private static final long serialVersionUID = 1L;
 

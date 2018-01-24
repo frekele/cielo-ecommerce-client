@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.frekele.cielo.ecommerce.client.converter.deserialize.OffsetDateTimeJsonDeserialize;
 import org.frekele.cielo.ecommerce.client.converter.serialize.OffsetDateTimeJsonSerialize;
-import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceEntity;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +18,7 @@ import java.util.List;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class FraudTravel implements CieloEcommerceModel {
+public class FraudTravel implements CieloEcommerceEntity {
 
     private static final long serialVersionUID = 1L;
 

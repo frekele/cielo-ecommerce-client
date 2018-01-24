@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.frekele.cielo.ecommerce.client.converter.deserialize.BigDecimalJsonDeserialize;
 import org.frekele.cielo.ecommerce.client.converter.serialize.BigDecimalJsonSerialize;
-import org.frekele.cielo.ecommerce.client.core.CieloEcommerceModel;
+import org.frekele.cielo.ecommerce.client.core.CieloEcommerceEntity;
 import org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis.FraudHostHedgeEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis.FraudNonSensicalHedgeEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.fraud.analysis.FraudObscenitiesHedgeEnum;
@@ -25,7 +25,7 @@ import java.util.List;
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class FraudItem implements CieloEcommerceModel {
+public class FraudItem implements CieloEcommerceEntity {
 
     private static final long serialVersionUID = 1L;
 
