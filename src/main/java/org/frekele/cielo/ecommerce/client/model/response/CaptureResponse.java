@@ -46,6 +46,7 @@ public class CaptureResponse implements CieloEcommerceModel {
     private List<Link> links;
 
     public CaptureResponse() {
+        super();
     }
 
     public String getStatus() {

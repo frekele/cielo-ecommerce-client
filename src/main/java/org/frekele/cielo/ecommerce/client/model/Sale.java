@@ -26,6 +26,7 @@ public class Sale implements CieloEcommerceModel {
     private Payment payment;
 
     public Sale() {
+        super();
     }
 
     public String getMerchantOrderId() {

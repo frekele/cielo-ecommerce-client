@@ -23,6 +23,7 @@ public class FraudMerchantDefinedField implements CieloEcommerceModel {
     private String value;
 
     public FraudMerchantDefinedField() {
+        super();
     }
 
     public String getId() {

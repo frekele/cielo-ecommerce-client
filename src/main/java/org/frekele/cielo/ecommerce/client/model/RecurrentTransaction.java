@@ -29,6 +29,7 @@ public class RecurrentTransaction implements CieloEcommerceModel {
     private Integer tryNumber;
 
     public RecurrentTransaction() {
+        super();
     }
 
     public String getPaymentId() {

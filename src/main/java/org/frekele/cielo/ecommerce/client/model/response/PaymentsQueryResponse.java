@@ -28,6 +28,7 @@ public class PaymentsQueryResponse implements CieloEcommerceModel {
     private List<BasePayment> payments;
 
     public PaymentsQueryResponse() {
+        super();
     }
 
     public String getReasonCode() {
