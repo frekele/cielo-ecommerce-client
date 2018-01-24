@@ -46,7 +46,7 @@ public class Payment extends BasePayment {
     private Boolean recurrent;
 
     @JsonProperty("IsSplitted")
-    private Boolean isSplitted;
+    private Boolean splitted;
 
     @JsonProperty("RecurrentPayment")
     private RecurrentPayment recurrentPayment;
@@ -212,12 +212,12 @@ public class Payment extends BasePayment {
         this.recurrent = recurrent;
     }
 
-    public Boolean getIsSplitted() {
-        return isSplitted;
+    public Boolean getSplitted() {
+        return splitted;
     }
 
-    public void setIsSplitted(Boolean isSplitted) {
-        this.isSplitted = isSplitted;
+    public void setSplitted(Boolean splitted) {
+        this.splitted = splitted;
     }
 
     public String getTid() {
