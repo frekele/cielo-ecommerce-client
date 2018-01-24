@@ -1,8 +1,10 @@
 package org.frekele.cielo.ecommerce.client.repository;
 
+import org.frekele.cielo.ecommerce.client.model.CardToken;
 import org.frekele.cielo.ecommerce.client.model.Customer;
 import org.frekele.cielo.ecommerce.client.model.Payment;
 import org.frekele.cielo.ecommerce.client.model.Sale;
+import org.frekele.cielo.ecommerce.client.model.response.CaptureResponse;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.HeaderParam;
@@ -11,6 +13,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.io.Serializable;
 
@@ -28,6 +31,13 @@ interface CieloEcommerceApiRequestProxyClient extends Serializable {
                     @HeaderParam("MerchantKey") String merchantKey,
                     @HeaderParam("RequestId") String requestId,
                     Sale sale);
+
+    @POST
+    @Path("card")
+    CardToken createCardToken(@HeaderParam("MerchantId") String merchantId,
+                              @HeaderParam("MerchantKey") String merchantKey,
+                              @HeaderParam("RequestId") String requestId,
+                              CardToken cardToken);
 
     @PUT
     @Path("RecurrentPayment/{recurrentPaymentId}/Customer")
@@ -98,4 +108,58 @@ interface CieloEcommerceApiRequestProxyClient extends Serializable {
                                  @HeaderParam("MerchantKey") String merchantKey,
                                  @HeaderParam("RequestId") String requestId,
                                  @PathParam("recurrentPaymentId") String recurrentPaymentId);
+
+    @PUT
+    @Path("sales/{paymentId}/capture")
+    CaptureResponse captureSale(@HeaderParam("MerchantId") String merchantId,
+                                @HeaderParam("MerchantKey") String merchantKey,
+                                @HeaderParam("RequestId") String requestId,
+                                @PathParam("paymentId") String paymentId);
+
+    @PUT
+    @Path("sales/{paymentId}/capture")
+    CaptureResponse captureSale(@HeaderParam("MerchantId") String merchantId,
+                                @HeaderParam("MerchantKey") String merchantKey,
+                                @HeaderParam("RequestId") String requestId,
+                                @PathParam("paymentId") String paymentId,
+                                @QueryParam("amount") Long amount);
+
+    @PUT
+    @Path("sales/{paymentId}/capture")
+    CaptureResponse captureSale(@HeaderParam("MerchantId") String merchantId,
+                                @HeaderParam("MerchantKey") String merchantKey,
+                                @HeaderParam("RequestId") String requestId,
+                                @PathParam("paymentId") String paymentId,
+                                @QueryParam("amount") Long amount,
+                                @QueryParam("serviceTaxAmount") Long serviceTaxAmount);
+
+    @PUT
+    @Path("sales/{paymentId}/void")
+    CaptureResponse cancelSale(@HeaderParam("MerchantId") String merchantId,
+                               @HeaderParam("MerchantKey") String merchantKey,
+                               @HeaderParam("RequestId") String requestId,
+                               @PathParam("paymentId") String paymentId);
+
+    @PUT
+    @Path("sales/{paymentId}/void")
+    CaptureResponse cancelSale(@HeaderParam("MerchantId") String merchantId,
+                               @HeaderParam("MerchantKey") String merchantKey,
+                               @HeaderParam("RequestId") String requestId,
+                               @PathParam("paymentId") String paymentId,
+                               @QueryParam("amount") Long amount);
+
+    @PUT
+    @Path("sales/OrderId/{merchantOrderId}/void")
+    CaptureResponse cancelSaleByMerchantOrderId(@HeaderParam("MerchantId") String merchantId,
+                                                @HeaderParam("MerchantKey") String merchantKey,
+                                                @HeaderParam("RequestId") String requestId,
+                                                @PathParam("merchantOrderId") String merchantOrderId);
+
+    @PUT
+    @Path("sales/OrderId/{merchantOrderId}/void")
+    CaptureResponse cancelSaleByMerchantOrderId(@HeaderParam("MerchantId") String merchantId,
+                                                @HeaderParam("MerchantKey") String merchantKey,
+                                                @HeaderParam("RequestId") String requestId,
+                                                @PathParam("merchantOrderId") String merchantOrderId,
+                                                @QueryParam("amount") Long amount);
 }

@@ -3,9 +3,11 @@ package org.frekele.cielo.ecommerce.client.repository;
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.core.Cielo;
 import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
+import org.frekele.cielo.ecommerce.client.model.CardToken;
 import org.frekele.cielo.ecommerce.client.model.Customer;
 import org.frekele.cielo.ecommerce.client.model.Payment;
 import org.frekele.cielo.ecommerce.client.model.Sale;
+import org.frekele.cielo.ecommerce.client.model.response.CaptureResponse;
 import org.frekele.cielo.ecommerce.client.model.response.PaymentsQueryResponse;
 import org.frekele.cielo.ecommerce.client.util.CieloUtils;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
@@ -55,11 +57,35 @@ public class CieloEcommerceRepositoryImpl implements CieloEcommerceRepository {
     }
 
     @Override
+    public Sale findSale(String paymentId) {
+        CieloUtils.throwObject(paymentId, "paymentId");
+        CieloEcommerceApiQueryProxyClient proxyClient = this.getApiQueryProxyClient();
+        return proxyClient.findSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            paymentId);
+    }
+
+    @Override
+    public PaymentsQueryResponse findPayments(String merchantOrderId) {
+        CieloUtils.throwObject(merchantOrderId, "merchantOrderId");
+        CieloEcommerceApiQueryProxyClient proxyClient = this.getApiQueryProxyClient();
+        return proxyClient.findPayments(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            merchantOrderId);
+    }
+
+    @Override
     public Sale createSale(Sale sale) {
         CieloUtils.throwObject(sale, "Sale");
         CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
         return proxyClient.createSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
             sale);
+    }
+
+    @Override
+    public CardToken createCardToken(CardToken cardToken) {
+        CieloUtils.throwObject(cardToken, "CardToken");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.createCardToken(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            cardToken);
     }
 
     @Override
@@ -142,18 +168,63 @@ public class CieloEcommerceRepositoryImpl implements CieloEcommerceRepository {
     }
 
     @Override
-    public Sale findSale(String paymentId) {
+    public CaptureResponse captureSale(String paymentId) {
         CieloUtils.throwObject(paymentId, "paymentId");
-        CieloEcommerceApiQueryProxyClient proxyClient = this.getApiQueryProxyClient();
-        return proxyClient.findSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.captureSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
             paymentId);
     }
 
     @Override
-    public PaymentsQueryResponse findPayments(String merchantOrderId) {
+    public CaptureResponse captureSale(String paymentId, BigDecimal amount) {
+        CieloUtils.throwObject(paymentId, "paymentId");
+        CieloUtils.throwObject(amount, "amount");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.captureSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            paymentId, amount.unscaledValue().longValue());
+    }
+
+    @Override
+    public CaptureResponse captureSale(String paymentId, BigDecimal amount, BigDecimal serviceTaxAmount) {
+        CieloUtils.throwObject(paymentId, "paymentId");
+        CieloUtils.throwObject(amount, "amount");
+        CieloUtils.throwObject(serviceTaxAmount, "serviceTaxAmount");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.captureSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            paymentId, amount.unscaledValue().longValue(), serviceTaxAmount.unscaledValue().longValue());
+    }
+
+    @Override
+    public CaptureResponse cancelSale(String paymentId) {
+        CieloUtils.throwObject(paymentId, "paymentId");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.cancelSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            paymentId);
+    }
+
+    @Override
+    public CaptureResponse cancelSale(String paymentId, BigDecimal amount) {
+        CieloUtils.throwObject(paymentId, "paymentId");
+        CieloUtils.throwObject(amount, "amount");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.cancelSale(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            paymentId, amount.unscaledValue().longValue());
+    }
+
+    @Override
+    public CaptureResponse cancelSaleByMerchantOrderId(String merchantOrderId) {
         CieloUtils.throwObject(merchantOrderId, "merchantOrderId");
-        CieloEcommerceApiQueryProxyClient proxyClient = this.getApiQueryProxyClient();
-        return proxyClient.findPayments(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.cancelSaleByMerchantOrderId(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
             merchantOrderId);
+    }
+
+    @Override
+    public CaptureResponse cancelSaleByMerchantOrderId(String merchantOrderId, BigDecimal amount) {
+        CieloUtils.throwObject(merchantOrderId, "merchantOrderId");
+        CieloUtils.throwObject(amount, "amount");
+        CieloEcommerceApiRequestProxyClient proxyClient = this.getApiRequestProxyClient();
+        return proxyClient.cancelSaleByMerchantOrderId(this.getAuth().getMerchantId(), this.getAuth().getMerchantKey(), CieloUtils.buildRequestId(),
+            merchantOrderId, amount.unscaledValue().longValue());
     }
 }
