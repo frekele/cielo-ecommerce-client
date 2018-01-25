@@ -94,7 +94,7 @@ public class CieloEcommerceRepositoryIT {
         cardToken.setCustomerName("Comprador Teste Cielo");
         cardToken.setCardNumber("4532117080573700");
         cardToken.setHolder("Comprador T Cielo");
-        cardToken.setExpirationDate("12/2030");
+        cardToken.setExpirationDate("12/2018");
         cardToken.setBrand(CardBrandEnum.VISA);
 
         //System.out.println("new CardToken");
