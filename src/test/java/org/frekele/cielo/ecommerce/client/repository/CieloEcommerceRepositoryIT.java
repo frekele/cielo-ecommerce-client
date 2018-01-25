@@ -5,13 +5,13 @@ import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.auth.EnvironmentCieloEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.CardBrandEnum;
 import org.frekele.cielo.ecommerce.client.enumeration.PaymentTypeEnum;
+import org.frekele.cielo.ecommerce.client.filter.RequestLoggingFilter;
+import org.frekele.cielo.ecommerce.client.filter.ResponseLoggingFilter;
 import org.frekele.cielo.ecommerce.client.model.CardToken;
 import org.frekele.cielo.ecommerce.client.model.CreditCard;
 import org.frekele.cielo.ecommerce.client.model.Customer;
 import org.frekele.cielo.ecommerce.client.model.Payment;
 import org.frekele.cielo.ecommerce.client.model.Sale;
-import org.frekele.cielo.ecommerce.client.filter.RequestLoggingFilter;
-import org.frekele.cielo.ecommerce.client.filter.ResponseLoggingFilter;
 import org.frekele.cielo.ecommerce.client.testng.InvokedMethodListener;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
@@ -80,12 +80,12 @@ public class CieloEcommerceRepositoryIT {
         payment.setCreditCard(creditCard);
         sale.setPayment(payment);
 
-        System.out.println("new Sale");
-        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(sale));
+        //System.out.println("new Sale");
+        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(sale));
 
         Sale saleResult = repository.createSale(sale);
-        System.out.println("saleResult");
-        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(saleResult));
+        //System.out.println("saleResult");
+        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(saleResult));
     }
 
     @Test
@@ -97,12 +97,12 @@ public class CieloEcommerceRepositoryIT {
         cardToken.setExpirationDate("12/2030");
         cardToken.setBrand(CardBrandEnum.VISA);
 
-        System.out.println("new CardToken");
-        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardToken));
+        //System.out.println("new CardToken");
+        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardToken));
 
         CardToken cardTokenResult = repository.createCardToken(cardToken);
-        System.out.println("cardTokenResult");
-        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardTokenResult));
+        //System.out.println("cardTokenResult");
+        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardTokenResult));
     }
 
     @Test
