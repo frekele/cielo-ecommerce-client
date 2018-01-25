@@ -1,8 +1,14 @@
 package org.frekele.cielo.ecommerce.client.util;
 
+import org.apache.commons.io.IOUtils;
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.exception.CieloException;
 
+import javax.ws.rs.client.ClientResponseContext;
+import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.UUID;
 
 /**
@@ -48,5 +54,28 @@ public final class CieloUtils {
 
     public static String buildRequestId() {
         return UUID.randomUUID().toString();
+    }
+
+    public static String responseBodyToString(ClientResponseContext responseContext) throws IOException {
+        String body = null;
+        if (responseContext.hasEntity()) {
+            try (InputStream entityStream = responseContext.getEntityStream()) {
+                Charset charset = null;
+                MediaType mediaType = responseContext.getMediaType();
+                if (mediaType != null) {
+                    String charsetName = mediaType.getParameters().get("charset");
+                    if (charsetName != null) {
+                        charset = Charset.forName(charsetName);
+                    }
+                }
+                if (charset == null) {
+                    charset = Charset.defaultCharset();
+                }
+                body = IOUtils.toString(entityStream, charset);
+                //Original EntityStream is closed, add InputStream again for Security.
+                responseContext.setEntityStream(IOUtils.toInputStream(body, charset));
+            }
+        }
+        return body;
     }
 }
