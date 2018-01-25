@@ -3,6 +3,7 @@ package org.frekele.cielo.ecommerce.client.repository;
 import org.frekele.cielo.ecommerce.client.auth.CieloAuth;
 import org.frekele.cielo.ecommerce.client.core.Cielo;
 import org.frekele.cielo.ecommerce.client.enumeration.RecurrentIntervalEnum;
+import org.frekele.cielo.ecommerce.client.filter.ResponseExceptionFilter;
 import org.frekele.cielo.ecommerce.client.model.CardToken;
 import org.frekele.cielo.ecommerce.client.model.Customer;
 import org.frekele.cielo.ecommerce.client.model.Payment;
@@ -34,6 +35,7 @@ public class CieloEcommerceRepositoryImpl implements CieloEcommerceRepository {
         CieloUtils.throwAuth(auth);
         this.client = client;
         this.auth = auth;
+        this.registerResponseExceptionFilter();
     }
 
     public ResteasyClient getClient() {
@@ -42,6 +44,10 @@ public class CieloEcommerceRepositoryImpl implements CieloEcommerceRepository {
 
     public CieloAuth getAuth() {
         return auth;
+    }
+
+    public void registerResponseExceptionFilter() {
+        this.getClient().register(ResponseExceptionFilter.class);
     }
 
     public CieloEcommerceApiRequestProxyClient getApiRequestProxyClient() {
