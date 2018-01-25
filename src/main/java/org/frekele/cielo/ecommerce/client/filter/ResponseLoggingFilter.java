@@ -26,7 +26,7 @@ public class ResponseLoggingFilter implements ClientResponseFilter {
         sb.append("<-- Response - Status= " + responseContext.getStatus());
         sb.append("\n");
         sb.append("------------------------------------------------------------------");
-        this.getLogger().debug(sb.toString());
+        this.getLogger().info(sb.toString());
     }
 
     public Logger getLogger() {
