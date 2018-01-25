@@ -84,8 +84,8 @@ public class CieloEcommerceRepositoryIT {
         //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(sale));
 
         Sale saleResult = repository.createSale(sale);
-        //System.out.println("saleResult");
-        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(saleResult));
+        System.out.println("saleResult");
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(saleResult));
     }
 
     @Test
@@ -101,8 +101,8 @@ public class CieloEcommerceRepositoryIT {
         //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardToken));
 
         CardToken cardTokenResult = repository.createCardToken(cardToken);
-        //System.out.println("cardTokenResult");
-        //System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardTokenResult));
+        System.out.println("cardTokenResult");
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cardTokenResult));
     }
 
     @Test
