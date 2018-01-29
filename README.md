@@ -28,13 +28,13 @@ Project built with RESTEasy 3.1.x + Jackson 2.x.x.
 <dependency>
     <groupId>org.frekele.cielo</groupId>
     <artifactId>cielo-ecommerce-client</artifactId>
-    <version>0.1.0-SNAPSHOT0</version>
+    <version>1.0.0-alpha-1</version>
 </dependency>
 ```
 
 #### Gradle dependency:
 ```gradle
-compile 'org.frekele.cielo:cielo-ecommerce-client:0.1.0-SNAPSHOT'
+compile 'org.frekele.cielo:cielo-ecommerce-client:1.0.0-alpha-1'
 ```
 
 #### Usage
