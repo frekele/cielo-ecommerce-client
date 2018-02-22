@@ -16,7 +16,7 @@
 
 Built-based on the documentation: [https://developercielo.github.io/manual/cielo-ecommerce](https://developercielo.github.io/manual/cielo-ecommerce)
 
-Project built with RESTEasy 3.1.x + Jackson 2.x.x.
+Project built with RESTEasy 3.5.x + Jackson 2.x.x.
 
 
 #### Supported Java Versions:
