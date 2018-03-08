@@ -16,7 +16,7 @@
 
 Built-based on the documentation: [https://developercielo.github.io/manual/cielo-ecommerce](https://developercielo.github.io/manual/cielo-ecommerce)
 
-Project built with RESTEasy 3.1.x + Jackson 2.x.x.
+Project built with RESTEasy 3.5.x + Jackson 2.x.x.
 
 
 #### Supported Java Versions:
@@ -28,13 +28,13 @@ Project built with RESTEasy 3.1.x + Jackson 2.x.x.
 <dependency>
     <groupId>org.frekele.cielo</groupId>
     <artifactId>cielo-ecommerce-client</artifactId>
-    <version>1.0.0-alpha-1</version>
+    <version>1.0.0-alpha-2</version>
 </dependency>
 ```
 
 #### Gradle dependency:
 ```gradle
-compile 'org.frekele.cielo:cielo-ecommerce-client:1.0.0-alpha-1'
+compile 'org.frekele.cielo:cielo-ecommerce-client:1.0.0-alpha-2'
 ```
 
 #### Usage
