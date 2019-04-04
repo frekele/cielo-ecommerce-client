@@ -5,7 +5,7 @@ jdk:
   - oraclejdk8
 
 env:
-  - MAVEN=3.5.4
+  - MAVEN=3.6.0
 
 cache:
   directories:
@@ -13,6 +13,7 @@ cache:
 
 
 before_install:
+  - ulimit -a && free -m
   - chmod +x .travis/*
   - echo ${GPG_PUBLIC_KEYS}  | base64 --decode > /tmp/frekele-pubkey.asc
   - echo ${GPG_PRIVATE_KEYS} | base64 --decode > /tmp/frekele-privkey.asc
@@ -21,11 +22,13 @@ before_install:
   - gpg --import /tmp/frekele-pubkey.asc
   - gpg --import /tmp/frekele-privkey.asc
   - gpg --import-ownertrust /tmp/frekele-ownertrust.asc
-  - export MVN_HOME=/tmp/maven-${MAVEN}
+  - sudo rm -f /etc/mavenrc && sudo rm -f ${HOME}/.mavenrc
+  - export MVN_HOME=/tmp/maven-${MAVEN} && export M2_HOME=${MVN_HOME}
   - mkdir ${MVN_HOME}
+  - export MAVEN_OPTS="-Dmaven.repo.local=${HOME}/.m2/repository -Xms1024m -Xmx4096m -XX:PermSize=512m"
   - export PATH=${MVN_HOME}/bin:$PATH
   - sudo apt-get install -qq jq
-  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar "https://github.com/codacy/codacy-coverage-reporter/releases/download/4.0.1/codacy-coverage-reporter-4.0.1-assembly.jar"
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar "https://github.com/codacy/codacy-coverage-reporter/releases/download/6.0.0/codacy-coverage-reporter-6.0.0-assembly.jar"
   #- wget -O ~/codacy-coverage-reporter-assembly-latest.jar "https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.codacy&a=codacy-coverage-reporter&v=LATEST"
   #- wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
 
@@ -36,6 +39,7 @@ before_script:
 
 script:
   - ${MVN_HOME}/bin/mvn --settings .travis/settings.xml install -Dgpg.skip -DskipUTs=false -DskipITs=false -B -V
+  - ulimit -a && free -m
 
 before_cache:
 
@@ -44,6 +48,9 @@ after_success:
   - java -jar ~/codacy-coverage-reporter-assembly-latest.jar report -l Java -r target/site/jacoco/jacoco.xml
 
 after_failure:
+  - echo "FAILURE"
+  - ulimit -a
+  - free -m
 
 before_deploy:
 
