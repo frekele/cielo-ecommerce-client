@@ -16,7 +16,7 @@
 
 Built-based on the documentation: [https://developercielo.github.io/manual/cielo-ecommerce](https://developercielo.github.io/manual/cielo-ecommerce)
 
-Project built with RESTEasy 3.5.x + Jackson 2.x.x.
+Project built with RESTEasy 3.6.x + Jackson 2.x.x.
 
 
 #### Supported Java Versions:
@@ -47,7 +47,7 @@ frekele/cielo-ecommerce-client is **licensed** under the **[MIT License]**. The 
 
     MIT License
 
-    Copyright (c) 2018 @frekele<Leandro Kersting de Freitas>
+    Copyright (c) 2018-2019 @frekele<Leandro Kersting de Freitas>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
