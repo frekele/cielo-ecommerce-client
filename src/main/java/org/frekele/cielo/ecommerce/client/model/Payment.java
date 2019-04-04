@@ -81,6 +81,9 @@ public class Payment extends BasePayment {
     @JsonProperty("Provider")
     private ProviderEnum provider;
 
+    @JsonProperty("IsQrCode")
+    private Boolean qrCode;
+
     @JsonProperty("PaymentId")
     private String paymentId;
 
@@ -266,6 +269,14 @@ public class Payment extends BasePayment {
 
     public void setProvider(ProviderEnum provider) {
         this.provider = provider;
+    }
+
+    public Boolean getQrCode() {
+        return qrCode;
+    }
+
+    public void setQrCode(Boolean qrCode) {
+        this.qrCode = qrCode;
     }
 
     public String getPaymentId() {
